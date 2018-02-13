@@ -51,10 +51,17 @@
 			square.addEventListener("click", colorBlue);
 			function colorBlue() {
 				event.target.style.backgroundColor = 'blue';
-		};
+			};
+		});
 // ------------commit 6------------	
 
-
+	var allSquare = document.getElementsByClassName(".square");
+		allSquare.forEach(function(square) {
+			square.addEventListener("mouseover", colorBlue);
+			function colorBlue() {
+				event.target.style.backgroundColor = 'blue';
+			};
+		});
 
 </script>
 </body>
