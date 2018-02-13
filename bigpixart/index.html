@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="" href="style.css">
+</head>
+<body>
+
+	<h1>big pixel art</h1>
+
+	<form>
+		<div class="brushBox"></div>
+		<div >
+			<input class="inputBox" type="text"  name="" value="">
+			<button class="colorBtn">Set Color</button>
+		</div>
+	</form>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		var brushBox = document.querySelector(".brushBox");	
+		var inputBox = document.querySelector(".inputBox");
+		var colorBtn = document.querySelector(".colorBtn");
+
+		colorBtn.addEventListener("click", 
+			function(event) {
+				event.preventDefault();
+		    	brushBox.style.backgroundColor = inputBox.value;		    
+			});
+    // ----------------------start 3-------------------
+		var body = $("body");
+		var divWidth = 20;
+		var divHeight = 20;
+	
+		for (var i = 0; i < 100; i++) {
+			var divs = $("<div>");
+			divs.addClass("square").width( divWidth ).height(divHeight);
+			body.append(divs);
+		}
+	// ---------------------- start 4 & 5-------------------
+		$(".square").one("click", function(){
+    		var eachSq = $(this).css("background-color",inputBox.value)
+    	});
+	
+
+	</script>
+</body>
+</html>

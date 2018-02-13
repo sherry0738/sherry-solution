@@ -1,0 +1,10 @@
+.brushBox {
+	border: 2px solid black;
+	height: 300px;
+	width: 300px;
+}
+.square {
+	background-color: red;
+	margin: 2px;
+
+}
