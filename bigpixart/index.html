@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<div class="inputBox">
+<input type="text"  name="">
+</div>
+<button id="btn">Set Color</button>
+
+<div class="square">
+	
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+// ------------commit 1 & 2------------	
+	var inputField = $('input:text')	
+	var inputBox = $( ".inputBox" )
+
+	document.getElementById("#btn").addEventListener("click", setColor);
+	document.querySelect(".inputBox").addEventListener("click", setColor);
+	
+	function setColor() {
+	    inputField.style.backgroundColor = "blue";
+	};
+
+// ------------commit 3------------
+
+	var divs = $("<div>");
+		divs.addClass("square");
+	var body = $("body");
+	divs.width() = "20px"
+	divs.height() = "20px"
+	body.append(divs);
+
+// ------------commit 4------------	
+	var allSquare = document.getElementsByClassName(".square");
+		allSquare.forEach(function(square) {
+			square.addEventListener("click", colorGreen);
+			function colorGreen() {
+				event.target.style.backgroundColor = 'green';
+		};
+
+// ------------commit 5------------			
+	var allSquare = document.getElementsByClassName(".square");
+		allSquare.forEach(function(square) {
+			square.addEventListener("click", colorBlue);
+			function colorBlue() {
+				event.target.style.backgroundColor = 'blue';
+		};
+// ------------commit 6------------	
+
+
+
+</script>
+</body>
+</html>
