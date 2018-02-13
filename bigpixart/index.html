@@ -27,7 +27,7 @@
 				event.preventDefault();
 		    	brushBox.style.backgroundColor = inputBox.value;		    
 			});
-    // ----------------------commit 3-------------------
+    // ----------------------start 3-------------------
 		var body = $("body");
 		var divWidth = 20;
 		var divHeight = 20;
@@ -37,10 +37,11 @@
 			divs.addClass("square").width( divWidth ).height(divHeight);
 			body.append(divs);
 		}
-	// ----------------------commit 4-------------------
+	// ---------------------- start 4 & 5-------------------
 		$(".square").one("click", function(){
-    		var eachSq = $(this).css("background-color","green")
+    		var eachSq = $(this).css("background-color",inputBox.value)
     	});
+	
 
 	</script>
 </body>
