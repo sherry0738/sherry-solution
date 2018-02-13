@@ -2,67 +2,32 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" type="" href="style.css">
 </head>
 <body>
 
-<div class="inputBox">
-<input type="text"  name="">
-</div>
-<button id="btn">Set Color</button>
+	<h1>big pixel art</h1>
 
-<div class="square">
+	<form>
+		<div class="brushBox"></div>
+		<div >
+			<input class="inputBox" type="text"  name="" value="">
+			<button class="colorBtn">Set Color</button>
+		</div>
+	</form>
 	
-</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		var brushBox = document.querySelector(".brushBox");	
+		var inputBox = document.querySelector(".inputBox");
+		var colorBtn = document.querySelector(".colorBtn");
 
+		colorBtn.addEventListener("click", 
+			function(event) {
+				event.preventDefault();
+		    	brushBox.style.backgroundColor = inputBox.value;		    
+			});
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-// ------------commit 1 & 2------------	
-	var inputField = $('input:text')	
-	var inputBox = $( ".inputBox" )
-
-	document.getElementById("#btn").addEventListener("click", setColor);
-	document.querySelect(".inputBox").addEventListener("click", setColor);
-	
-	function setColor() {
-	    inputField.style.backgroundColor = "blue";
-	};
-
-// ------------commit 3------------
-
-	var divs = $("<div>");
-		divs.addClass("square");
-	var body = $("body");
-	divs.width() = "20px"
-	divs.height() = "20px"
-	body.append(divs);
-
-// ------------commit 4------------	
-	var allSquare = document.getElementsByClassName(".square");
-		allSquare.forEach(function(square) {
-			square.addEventListener("click", colorGreen);
-			function colorGreen() {
-				event.target.style.backgroundColor = 'green';
-		};
-
-// ------------commit 5------------			
-	var allSquare = document.getElementsByClassName(".square");
-		allSquare.forEach(function(square) {
-			square.addEventListener("click", colorBlue);
-			function colorBlue() {
-				event.target.style.backgroundColor = 'blue';
-			};
-		});
-// ------------commit 6------------	
-
-	var allSquare = document.getElementsByClassName(".square");
-		allSquare.forEach(function(square) {
-			square.addEventListener("mouseover", colorBlue);
-			function colorBlue() {
-				event.target.style.backgroundColor = 'blue';
-			};
-		});
-
-</script>
+	</script>
 </body>
 </html>
