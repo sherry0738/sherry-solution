@@ -3,8 +3,22 @@
 	height: 300px;
 	width: 300px;
 }
-.square {
-	background-color: red;
+/*.squaresBox {
+	
 	margin: 2px;
+	height: 600px;
+	width: 600px;
+	display: flex;
+	flex-wrap: wrap;
+	border: 2px solid black;
 
+}*/
+
+body {
+	margin: 2px;
+	height: 600px;
+	width: 600px;
+	display: flex;
+	flex-wrap: wrap;
+	border-style: none;
 }
