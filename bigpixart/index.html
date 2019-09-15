@@ -6,13 +6,17 @@
 </head>
 <body>
 
-	<h1>big pixel art</h1>
+	<h2>big pixel art</h1>
 
 	<form>
 		<div class="brushBox"></div>
 		<div >
 			<input class="inputBox" type="text"  name="" value="">
 			<button class="colorBtn">Set Color</button>
+		</div>
+		<div >
+			<input class="stampInput" type="text"  name="" value="">
+			<button class="stampBtn">Set your background</button>
 		</div>
 	</form>
 	
@@ -36,13 +40,38 @@
 			var divs = $("<div>");
 			divs.addClass("square").width( divWidth ).height(divHeight);
 			body.append(divs);
+			
 		}
 	// ---------------------- start 4 & 5-------------------
-		$(".square").one("click", function(){
-    		var eachSq = $(this).css("background-color",inputBox.value)
+	//  $(".square").one("click", function(){
+    // 		var eachSq = $(this).css("background-color",inputBox.value)
+    //  });
+	// ---------------------- start 6 -------------------
+		$(".square").one("mouseover", function(){
+    		 $(this).css("background-color",inputBox.value)
     	});
-	
+    // ---------------------- start 7 --------------------	
+    	
+		var stampBtn = document.querySelector(".stampBtn");
 
+		var stampInput = document.querySelector(".stampInput");
+	    	
+			stampBtn.addEventListener("click", function(event) {
+				event.preventDefault();
+				var options = {url: `http://www.omdbapi.com/?apikey=2f6435d9&t=${stampInput.value}`};
+		    	$.ajax(options).done(function(res) {
+					var backgroundPic = res.Poster;
+					// console.log(res);
+					// console.log(backgroundPic);	
+					brushBox.addEventListener("mouseover", function() {
+						$(this).css('background-image', 'url(' + backgroundPic + ')');
+					});
+					$(".square").one("mouseover", function(){
+
+    		 			$(this).css('background-image', 'url(' + backgroundPic + ')');
+    		});
+				});	    
+			});
 	</script>
 </body>
 </html>
